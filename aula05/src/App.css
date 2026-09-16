@@ -36,7 +36,7 @@ h1
     color : #960000;
 }
 
-input[type=text], input[type=number]
+input[type=text], input[type=number], select
 {
     width: 100%;
     box-sizing: border-box;
@@ -62,3 +62,4 @@ th
     background-color: #960000;
     color: white;
 }
+

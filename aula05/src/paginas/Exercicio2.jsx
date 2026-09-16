@@ -1,8 +1,10 @@
 import {Link} from "react-router-dom";
 import "../App.css";
-
+import {useState} from "react"; 
 export default function Exercicio1()
 {
+
+        
     return (
         <div>
             <h1>Exercício 2</h1>
