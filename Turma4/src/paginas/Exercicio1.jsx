@@ -1,0 +1,64 @@
+import {Link} from "react-router-dom";
+import "../App.css";
+import {useState} from "react"; 
+
+export default function Exercicio1()
+{
+
+    const [capital, setCaptal] =  useState ();
+    const [taxa, setTaxa] = useState ();
+    const [tempo, setTempo] = useState ();
+    const [resultado, setResultado] = useState();
+
+
+
+  function calcular(){
+        let juros = Number(capital) * (Number(taxa)/100) * Number(tempo);
+        let montante = Number (capital) + juros; 
+
+
+        setResultado(
+            <p>O juros são R${juros.toFixed(2)} e o montante final é R${montante.toFixed(2)}</p>
+        )
+  }
+
+     
+
+    return (
+        <div>
+
+            <h1>Exercício 1</h1>
+
+            <div className="conteudo">
+
+                <form>
+
+                    <p>
+                        Digite o capital (Em R$) <input type="number" value={capital} onChange={(e) =>setCaptal(e.target.value)} />
+                    </p>
+                    <p>
+                        Digite a taxa de juros (Em % ao mês)<input type="number" value={taxa} onChange={(e) =>setTaxa(e.target.value)} />
+                    </p>
+                    <p>
+                        Digite o tempo (em meses) <input type="number" value={tempo} onChange={(e) =>setTempo(e.target.value)} />
+                    </p>
+                    <p>
+                        <input type="button" value="Calcular" onClick={calcular} />
+
+                    </p>
+                    <p>
+                        {resultado}
+                    </p>
+
+                </form>
+
+
+                <p>
+                    <Link to="/">Voltar</Link>
+                </p>
+
+            </div>
+
+        </div>
+    );
+}
